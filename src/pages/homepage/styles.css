@@ -9,6 +9,12 @@
     overflow: auto;
     margin-bottom: 30px;
   }
+
+  .favorites-found {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
   
   .items {
     display: flex;
@@ -19,21 +25,29 @@
   }
   
   .loading, .no-items  {
+    font-family: 'Open Sans', sans-serif;
     font-size: 40px;
-    text-transform: uppercase;
-    color: #ffffff;
   }
   
   .favorites-title {
-    color: #fa6400;
+    color: #F7C04A;
     font-weight: 700;
     font-size: 35px;
     margin: 12px 0 12px 0px;
     margin: 20px 0px;
   }
   
-  .search-favorites input{
-      padding: 10px 50px;
-      margin-bottom: 30px;
-  
+  .search-favorites input {
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 50px 10px 5px;
+    margin-bottom: 30px;
   }
+
+  .search-favorites input:focus {
+    outline: none;
+  }
+  
+
+  

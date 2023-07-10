@@ -1,11 +1,21 @@
+h1 {
+    font-size: 50px;
+    color:#F7C04A;
+}
+
 .themeButton {
-    background-color: #fa6400;
+    background-color: #F7C04A;
     padding: 10px 50px;
     color: white;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     box-shadow: 0 1px 3px 0 rgb(0, 0, 0 / 2%);
     border-radius: 4px;
-    border-color: #fa6400;
+    border: none;
     cursor: pointer;
     margin-bottom: 30px;
+}
+
+.themeButton:hover {
+    background-color: #e0ab3a;
 }

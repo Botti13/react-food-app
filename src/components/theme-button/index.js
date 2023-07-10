@@ -1,20 +1,37 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./styles.css";
 import { ThemeContext } from "../../App";
 
 const ThemeButton = () => {
   const { theme, setTheme } = useContext(ThemeContext);
+  const [isHover, setHover] = useState(false);
 
-  console.log(theme, setTheme);
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
 
   return (
-    <button
-      style={theme ? { backgroundColor: "#12343b" } : {}}
-      onClick={() => setTheme(!theme)}
-      className="themeButton"
-    >
-      Change Theme
-    </button>
+    <div>
+      <h1 style={theme ? { color: "#539165" } : {}}>
+        Welcome to your recipe book!
+      </h1>
+
+      <button
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={
+          theme ? { backgroundColor: isHover ? "#437551" : "#539165" } : {}
+        }
+        onClick={() => setTheme(!theme)}
+        className="themeButton"
+      >
+        Change Theme
+      </button>
+    </div>
   );
 };
 

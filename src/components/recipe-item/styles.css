@@ -1,28 +1,38 @@
 .recipe-item{
-    border: 1px solid red;
     padding: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(250,100,0,1);
     background-color: #ffffff;
+    border-radius: 15px;
+}
+
+img {
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .recipe-item p{
-    color: #fa6400;
+    color: #F7C04A;
     font-weight: 700;
     font-size: 20px;
     margin: 12px 0 12px 0px;
+    cursor: pointer;
 }
 
 .recipe-item button{
-    background-color: #fa6400;
-    border: 1px solid transparent;
+    background-color: #F7C04A;
+    border: none;
     border-radius: 0.25rem;
     box-shadow: rgb(0 0 0 / 2%) 0 1px 3px 0;
     color: #fff;
     cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     justify-content: center;
     line-height: 1.25;
     margin: 0;
     padding: 12px 40px;
+}
+
+.recipe-item button:hover {
+    background-color: #e0ab3a;
 }

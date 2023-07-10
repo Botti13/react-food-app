@@ -10,6 +10,16 @@ function Search(props) {
 
   const [inputValue, setInputValue] = useState("");
 
+  const [isHover, setHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
+
   const handleInputValue = (event) => {
     setInputValue(event.target.value);
   };
@@ -35,7 +45,14 @@ function Search(props) {
         placeholder="Search Recipes"
         id="search"
       />
-      <button style={theme ? { backgroundColor: "#12343b" } : {}} type="submit">
+      <button
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={
+          theme ? { backgroundColor: isHover ? "#437551" : "#539165" } : {}
+        }
+        type="submit"
+      >
         Search
       </button>
     </form>

@@ -97,8 +97,6 @@ function Homepage() {
     setFavorites(extractFavoritesFromLocalStorageOnPageLoad);
   }, []);
 
-  console.log(filteredState, "filteredState");
-
   const filteredFavorites =
     favorites && favorites.length > 0
       ? favorites.filter((item) =>
@@ -120,7 +118,7 @@ function Homepage() {
   }, [recipes, addToFavorites]);
 
   return (
-    <div className="homepage">
+    <div>
       <Search
         getDataFromSearchComponent={getDataFromSearchComponent}
         apiCalledSucces={apiCalledSucces}
@@ -129,7 +127,7 @@ function Homepage() {
 
       <div className="favorites-wrapper">
         <h1
-          style={theme ? { color: "#12343b" } : {}}
+          style={theme ? { color: "#539165" } : {}}
           className="favorites-title"
         >
           Favorites
@@ -147,12 +145,8 @@ function Homepage() {
         <div className="favorites">
           {!filteredFavorites.length && (
             <div
-              style={{
-                display: "flex",
-                width: "100%",
-                justifyContent: "center",
-              }}
-              className="no-items"
+              className="no-items favorites-found"
+              style={theme ? { color: "#539165" } : { color: "#F7C04A" }}
             >
               No favorites found!
             </div>
@@ -171,7 +165,12 @@ function Homepage() {
       </div>
 
       {loadingState && (
-        <div className="loading">Loading recipes! Please wait</div>
+        <div
+          className="loading"
+          style={theme ? { color: "#539165" } : { color: "#F7C04A" }}
+        >
+          Loading recipes! Please wait
+        </div>
       )}
 
       <div className="items">
@@ -189,22 +188,15 @@ function Homepage() {
               : null,
           [loadingState, recipes, addToFavorites]
         )}
-
-        {/* {renderRecipes()} */}
-        {/* {recipes && recipes.length > 0
-          ? recipes.map((item) => (
-              <RecipeItem
-                addToFavorites={() => addToFavorites(item)}
-                id={item.id}
-                image={item.image}
-                title={item.title}
-              />
-            ))
-          : null} */}
       </div>
 
       {!loadingState && !recipes.length && (
-        <div className="no-items">No recipes found!</div>
+        <div
+          className="no-items"
+          style={theme ? { color: "#539165" } : { color: "#F7C04A" }}
+        >
+          No recipes found!
+        </div>
       )}
     </div>
   );
